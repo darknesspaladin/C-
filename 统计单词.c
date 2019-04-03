@@ -13,6 +13,27 @@ int main(void)
 	bool inword = false; //如果在单词c中，inword == true
 	
 	printf("Enter text to be analyzed (| to terminate):\n");
-	prev = '\n'
-	 
+	prev = '\n';
+	while ((c = getchar()) != STOP)
+	{
+		n_chars++;  //统计字符
+		if (c == '\n')
+			n_lines++; //统计行数
+		if (!isspace(c) && !inword)
+		{
+			inword = true; //开始一个新的单词
+			n_words++;     //统计单词 
+		}
+		if (isspace(c) && inword)
+			inword = false;       //判断一个单词结束
+		//prev = c; 
+	}
+	if (c != '\n')
+		p_lines = 1;
+	
+	printf("characters = %ld, words = %d, lines = %d, ",
+		n_chars, n_words, n_lines);
+	printf("partial lines = %d\n", p_lines);
+	
+	return 0;
 } 
