@@ -8,10 +8,9 @@ int main(void)
 	int num_ji = 0;
 	int num_ou = 0;
 	
-	while (i != 0)
+	while (scanf("%d",&i) && i != 0)
 	{
-		scanf("%d",&i);
-		if (i % 2 == 0 && i !=0)
+		if (i % 2 == 0 )
 		{
 			sum_ou = sum_ou + i;
 			num_ou++;
